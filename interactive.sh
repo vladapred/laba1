@@ -28,15 +28,18 @@ Menu
 printf "Enter the operation "
 read -r operation
 case "$operation" in
-A|a|calc) printf "Enter the args"
+A|a|calc) printf "Enter the args and two numbers"
 read -r args
-calc "$args";;
+read -r num1
+read -r num2
+calc "$args" "$num1" "$num2";;
 B|b|search) printf "Enter the args"
 read -r args
 search "$args";;
 C|c|reverse) printf "Enter two args"
 read -r args
-reverse "$args";;
+read -r args1
+reverse "$args" "$args1";;
 D|d|strlen) printf "Enter the args"
 read args
 strlen "$args";;
