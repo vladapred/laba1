@@ -27,19 +27,27 @@ do
 Menu
 printf "Enter the operation "
 read -r operation
-printf "Enter the args "
-read -r args
-echo $args
 case "$operation" in
-A|a|calc) calc "$args";;
-B|b|search) search "$args";;
-C|c|reverse) reverse "$args";;
-D|d|strlen) strlen "$args";;
-E|e|log) log "$args";;
-F|f|exit_) exit_ "$args";;
-G|g|help) help "$args";;
+A|a|calc) printf "Enter the args"
+read -r args
+calc "$args";;
+B|b|search) printf "Enter the args"
+read -r args
+search "$args";;
+C|c|reverse) printf "Enter two args"
+read -r args
+reverse "$args";;
+D|d|strlen) printf "Enter the args"
+read args
+strlen "$args";;
+E|e|log) log;;
+F|f|exit_) printf "Enter the args"
+read args
+exit_ "$args";;
+G|g|help) help;;
 H|h|quit) exit;;
 *)
+echo
 echo "Invalid imput format"
 esac
 echo

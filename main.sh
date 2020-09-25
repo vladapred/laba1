@@ -18,6 +18,7 @@ exit_) exit_ "$2";;
 help) help;;
 interactive) interactive;;
 *)  echo "invalid imput format" > /dev/stderr
-return -7;;
+return -7
+bash help.sh;;
 esac
 

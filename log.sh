@@ -8,11 +8,12 @@ file=/var/log/anaconda/X.log
 
 if [[ -f "$file" ]]
 then
-grep -E -h -s "\\(II\\)" //var/log/anaconda/X.log | sed -E "s/\\(II\\)/${Yellow}Warning:${Normal}/" > text.txt
-grep -E -h -s "\\(WW\\)" //var/log/anaconda/X.log | sed -E "s/\\(WW\\)/${Blue}Information:${Normal}/" >> text.txt
-rm text.txt
+grep "\\(II\\)" //var/log/anaconda/X.log | sed -E "s/\\(II\\)/${Yellow}Informatiom:${Normal}/" > all
+grep  "\\(WW\\)" //var/log/anaconda/X.log | sed -E "s/\\(WW\\)/${Blue}Warning:${Normal}/" >> all
+cat all
 else
 echo "File doesn't exist" > /dev/stderr
 return -3
+bash help.sh
 fi
 }
